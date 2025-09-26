@@ -11,11 +11,17 @@ def main():
         display_menu()
         choice = input("Enter your choice: ")
         if choice == '1':
-            item = input("Enter item to add: ").strip().lower
-            shopping_list = shopping_list.append(item)
+            item = input("Enter the item to add: ").strip().lower
+            shopping_list.append(item)
+            return shopping_list
         elif choice == '2':
-            item = input("Enter item to remove: ").strip().lower
-            shopping_list = shopping_list.remove(item)
+            item = input("Enter the item to remove: ").strip().lower
+            if item in shopping_list:
+                shopping_list.remove(item)
+            else:
+                print("Item not in list.")
+            return shopping_list
+            print(shopping_list)
         elif choice == '3':
             for i in shopping_list:
                 print(shopping_list)
@@ -23,7 +29,7 @@ def main():
             print("Goodbye!")
         else:
             print("Invalid choice. Please try again.")
-    return shopping_list
-
+        print(shopping_list)
+        
 if __name__ == "__main__":
     main()
