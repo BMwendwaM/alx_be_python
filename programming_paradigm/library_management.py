@@ -10,6 +10,9 @@ class Book:
     def return_book(self):
         self.__is_checked_out = False
 
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
 class Library:
     def __init__(self):      
         self._books = []
@@ -29,4 +32,4 @@ class Library:
     
     def list_available_books(self):
         for book in self._books:
-            return book
+            print(book)
