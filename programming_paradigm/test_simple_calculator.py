@@ -1,5 +1,5 @@
 import unittest
-from simple_calculator.py import SimpleCalculator
+from simple_calculator import SimpleCalculator
 
 class TestSimpleCalculator(unittest.TestCase):
     def setUp(self):
@@ -16,11 +16,10 @@ class TestSimpleCalculator(unittest.TestCase):
 
     def test_multiplication(self):
         self.assertEqual(self.calc.multiply(6, 3), 18)
-        self.assertEqual(self.calc.subtract(3, 3), 9)
+        self.assertEqual(self.calc.multiply(3, 3), 9)
 
     def test_division(self):
-        if b == 0:
-            return None
-        else:
-            self.assertEqual(self.calc.divide(8, 2), 4)
-            self.assertEqual(self.calc.divide(10, 5), 2)
+        self.assertEqual(self.calc.divide(8, 2), 4)
+        self.assertEqual(self.calc.divide(10, 5), 2)
+        # Division by zero error
+        self.assertEqual(self.calc.divide(10, 0), None)
